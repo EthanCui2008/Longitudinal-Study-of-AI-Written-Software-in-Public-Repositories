@@ -1,8 +1,9 @@
-
 keys.env
-data/
 repos/
 results/
+results_test/
 
 .claude
 .venv
+__pycache__/
+DOCKER.md
