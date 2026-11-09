@@ -69,8 +69,9 @@ CONFIG = {
     'work_dir': None,                    # None -> /dev/shm/lsaiw on Linux, ./repos otherwise
     'rules_dir': ROOT / 'rules',
 
-    # Dashboard
-    'dashboard_host': '127.0.0.1',
+    # Dashboard. None -> 0.0.0.0 inside a container (so published ports and Tailscale reach it),
+    # 127.0.0.1 otherwise. LSAIW_HOST / LSAIW_PORT override both.
+    'dashboard_host': None,
     'dashboard_port': 8765,
 }
 
@@ -99,6 +100,12 @@ def build_config(test: bool = False, **overrides) -> dict:
     if test:
         cfg.update(TEST_OVERRIDES)
     cfg.update({k: v for k, v in overrides.items() if v is not None})
+    if os.getenv('LSAIW_HOST') and overrides.get('dashboard_host') is None:
+        cfg['dashboard_host'] = os.environ['LSAIW_HOST']
+    if os.getenv('LSAIW_PORT') and overrides.get('dashboard_port') is None:
+        cfg['dashboard_port'] = int(os.environ['LSAIW_PORT'])
+    if cfg['dashboard_host'] is None:
+        cfg['dashboard_host'] = '0.0.0.0' if in_container() else '127.0.0.1'
     cfg['results_dir'] = Path(cfg['results_dir'])
     cfg['db_path'] = cfg['results_dir'] / 'pipeline.db'
     cfg['log_file'] = cfg['results_dir'] / 'pipeline.log'
@@ -111,6 +118,45 @@ def build_config(test: bool = False, **overrides) -> dict:
     return cfg
 
 
+def in_container() -> bool:
+    return Path('/.dockerenv').exists() or Path('/run/.containerenv').exists()
+
+
+def on_wsl() -> bool:
+    """WSL2 distro, or a container on Docker Desktop's WSL2 VM (same kernel)."""
+    try:
+        return 'microsoft' in Path('/proc/sys/kernel/osrelease').read_text().lower()
+    except OSError:
+        return False
+
+
+def _cgroup_limits():
+    """(cpus, memory_gb) from cgroup v2 limits (`docker run --cpus/--memory`), else None for each.
+
+    Inside a container os.cpu_count() and psutil see the whole VM, not the container's share.
+    """
+    cpus = mem = None
+    try:
+        quota, period = Path('/sys/fs/cgroup/cpu.max').read_text().split()
+        if quota != 'max':
+            cpus = max(1, round(int(quota) / int(period)))
+    except (OSError, ValueError):
+        pass
+    try:
+        raw = Path('/sys/fs/cgroup/memory.max').read_text().strip()
+        if raw != 'max':
+            mem = int(raw) / 2**30
+    except (OSError, ValueError):
+        pass
+    return cpus, mem
+
+
+def describe_env(cfg: dict) -> str:
+    where = ('container on WSL2 (Docker Desktop)' if in_container() and on_wsl() else
+             'container' if in_container() else 'WSL2' if on_wsl() else sys.platform)
+    return f"{where}, {cfg['cpus']} CPUs, {cfg['mem_gb']:.0f} GB RAM available"
+
+
 def _resolve_workers(cfg: dict):
     cores = os.cpu_count() or 4
     try:
@@ -118,6 +164,12 @@ def _resolve_workers(cfg: dict):
         avail_gb = psutil.virtual_memory().available / 2**30
     except Exception:
         avail_gb = 8.0
+    cg_cpus, cg_mem = _cgroup_limits()
+    cores = min(cores, cg_cpus or cores)
+    avail_gb = min(avail_gb, cg_mem or avail_gb)
+    cfg['cpus'], cfg['mem_gb'] = cores, avail_gb
+    # Clones in /dev/shm count against the container's memory too: cap each semgrep process at ~30%.
+    cfg['semgrep_max_memory_mb'] = max(1500, min(cfg['semgrep_max_memory_mb'], int(avail_gb * 1024 * 0.3)))
     if cfg['semgrep_procs'] is None:
         # Two overlapping processes hide semgrep's rule-loading startup cost.
         cfg['semgrep_procs'] = 2 if cores >= 4 and avail_gb >= 8 else 1

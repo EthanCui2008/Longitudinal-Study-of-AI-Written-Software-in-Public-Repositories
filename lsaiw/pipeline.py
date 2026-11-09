@@ -14,7 +14,7 @@ import time
 from collections import deque
 
 from .collect import BudgetReached, RepoSampler, months
-from .config import cell_targets
+from .config import cell_targets, describe_env, in_container, on_wsl
 from .deps import OSVClient
 from .infra import ShutdownRequested, SkipRepo, rmtree_force
 from .scan import SemgrepRunner
@@ -253,9 +253,14 @@ class Pipeline:
         rmtree_force(self.cfg['work_dir'])  # leftovers from an interrupted run
         self.cfg['work_dir'].mkdir(parents=True, exist_ok=True)
         self.shutdown.set_save_callback(self.save_state)
+        self.log.info(f"Environment: {describe_env(self.cfg)}")
+        if on_wsl() and not in_container() and str(self.cfg['results_dir'].resolve()).startswith('/mnt/'):
+            self.log.warn("results_dir is on a Windows drive (/mnt/...), where SQLite is slow and lock-prone: "
+                          "clone the repo inside the WSL filesystem (e.g. ~/lsaiw)")
         self.log.info(f"Workers: clone={self.cfg['clone_workers']}, semgrep={self.cfg['semgrep_procs']}"
                       f"x-j{self.cfg['semgrep_jobs']} (batch {self.cfg['semgrep_batch_size']}), "
-                      f"deps={self.cfg['deps_workers']}; work dir {self.cfg['work_dir']}")
+                      f"deps={self.cfg['deps_workers']}, semgrep mem {self.cfg['semgrep_max_memory_mb']} MB; "
+                      f"work dir {self.cfg['work_dir']}")
         if os.name == 'nt':
             self.log.info(f"Tip: a Windows Defender exclusion for {self.cfg['work_dir']} speeds up cloning")
         threading.Thread(target=self._collector, daemon=True, name='collector').start()

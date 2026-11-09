@@ -1,0 +1,11 @@
+.git
+.venv
+.claude
+keys.env
+tailscale.env
+results/
+results_test/
+results_test.prev/
+repos/
+__pycache__/
+*.md

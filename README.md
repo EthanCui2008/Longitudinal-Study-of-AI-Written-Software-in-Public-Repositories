@@ -99,6 +99,25 @@ with LLM release lines, live raw correlations, and the log tail. It updates by S
 `/stats.json` serves the same data for scripts. Use `--host 0.0.0.0` to watch from a phone on the same network, or
 `python run.py dashboard` to view an existing DB without running anything.
 
+### Docker on WSL (recommended on Windows)
+
+From a clone **inside the WSL filesystem** (e.g. `~/lsaiw`, not `/mnt/c/...`), with Docker Desktop's WSL integration on:
+
+```bash
+cp keys.env.example keys.env    # add your GitHub token(s); passed in via env_file, never baked into the image
+./lsaiw.sh test                 # foreground test run, fresh each time -> results_test/, dashboard :8766
+./lsaiw.sh full                 # background full run (resumes) -> results/, dashboard :8765
+./lsaiw.sh logs | status | stop
+./lsaiw.sh analyze [--test]     # also: export, dashboard
+./lsaiw.sh tailscale up         # optional: dashboards on your tailnet (needs tailscale.env)
+```
+
+`lsaiw.sh` wraps `compose.yaml`. Containers run as your WSL user, so `results/` stays yours, and inside a
+container the dashboard binds `0.0.0.0` automatically. Worker counts follow the container's `--cpus`/`--memory`
+limits (cgroup), not the whole WSL VM. The Tailscale sidecar joins your tailnet as its own device (`lsaiw`) and
+proxies to the dashboards over the compose network, so other devices reach `http://lsaiw.<tailnet>.ts.net`
+(full) and `:8080` (test) without relying on Windows/WSL port forwarding.
+
 ## Performance
 
 The stages run concurrently, connected by bounded queues:
@@ -139,6 +158,8 @@ collect (GraphQL) -> snapshot (12 git threads) -> semgrep (2 procs x -j4, batche
 
 ```
 run.py                 CLI: rules | run | dashboard | analyze | export
+lsaiw.sh               Docker/WSL runner: test | full | logs | status | stop | analyze | tailscale
+Dockerfile, compose.yaml, docker/tailscale-serve.json
 lsaiw/config.py        parameters, LLM events, AI-marker patterns
 lsaiw/collect.py       GraphQL client and stratified sampler
 lsaiw/snapshot.py      clone, checkout at created+90d, LOC, AI markers

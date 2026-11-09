@@ -1,7 +1,10 @@
 keys.env
+tailscale.env
+.env
 repos/
 results/
 results_test/
+results_test.prev/
 
 .claude
 .venv

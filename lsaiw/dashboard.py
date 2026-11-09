@@ -3,8 +3,10 @@
     /            single inline HTML page (no CDN, no framework)
     /events      SSE stream, one JSON stats object every 2 s
     /stats.json  the same object for polling / scripts
+    /healthz     "ok" (container healthcheck)
 """
 import json
+import os
 import shutil
 import threading
 import time
@@ -160,7 +162,9 @@ def _make_handler(source: StatsSource):
 
         def do_GET(self):
             try:
-                if self.path in ('/', '/index.html'):
+                if self.path == '/healthz':
+                    self._send(b'ok', 'text/plain')
+                elif self.path in ('/', '/index.html'):
                     self._send(PAGE.encode('utf-8'), 'text/html; charset=utf-8')
                 elif self.path == '/stats.json':
                     self._send(json.dumps(source.stats(), default=str).encode(), 'application/json')
@@ -168,6 +172,7 @@ def _make_handler(source: StatsSource):
                     self.send_response(200)
                     self.send_header('Content-Type', 'text/event-stream')
                     self.send_header('Cache-Control', 'no-store')
+                    self.send_header('X-Accel-Buffering', 'no')  # reverse proxies (tailscale serve): don't buffer
                     self.end_headers()
                     while True:
                         self.wfile.write(f"data: {json.dumps(source.stats(), default=str)}\n\n".encode())
@@ -189,7 +194,12 @@ def start_dashboard(source: StatsSource, host: str, port: int, log) -> bool:
         return False
     srv.daemon_threads = True
     threading.Thread(target=srv.serve_forever, daemon=True, name='dashboard').start()
-    log.info(f"Dashboard: http://{'127.0.0.1' if host in ('0.0.0.0', '') else host}:{port}")
+    if host in ('0.0.0.0', '', '::'):
+        public = os.getenv('LSAIW_PUBLIC_URL')
+        log.info(f"Dashboard listening on all interfaces, port {port}"
+                 + (f" (open {public})" if public else ''))
+    else:
+        log.info(f"Dashboard: http://{host}:{port} (this machine only; --host 0.0.0.0 to share)")
     return True
 
 

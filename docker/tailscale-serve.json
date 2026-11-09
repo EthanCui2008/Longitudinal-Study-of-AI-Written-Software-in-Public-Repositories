@@ -1,0 +1,10 @@
+{
+  "TCP": {
+    "80": { "HTTP": true },
+    "8080": { "HTTP": true }
+  },
+  "Web": {
+    "${TS_CERT_DOMAIN}:80": { "Handlers": { "/": { "Proxy": "http://full:8765" } } },
+    "${TS_CERT_DOMAIN}:8080": { "Handlers": { "/": { "Proxy": "http://test:8765" } } }
+  }
+}
