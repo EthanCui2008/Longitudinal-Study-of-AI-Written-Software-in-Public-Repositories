@@ -1,0 +1,1042 @@
+[
+ {
+  "cve": "CVE-2018-20060",
+  "ecosystem": "PyPI",
+  "package": "urllib3",
+  "severity": "CRITICAL",
+  "published": "2018-12-11",
+  "osv_ids": [
+   "GHSA-www2-v7xj-xrc6",
+   "PYSEC-2018-32"
+  ]
+ },
+ {
+  "cve": "CVE-2018-18074",
+  "ecosystem": "PyPI",
+  "package": "requests",
+  "severity": "HIGH",
+  "published": "2018-10-09",
+  "osv_ids": [
+   "GHSA-x84v-xcm2-53pg",
+   "PYSEC-2018-28"
+  ]
+ },
+ {
+  "cve": "CVE-2013-1633",
+  "ecosystem": "PyPI",
+  "package": "setuptools",
+  "severity": "HIGH",
+  "published": "2022-05-17",
+  "osv_ids": [
+   "GHSA-27x4-j476-jp5f"
+  ]
+ },
+ {
+  "cve": "CVE-2023-37920",
+  "ecosystem": "PyPI",
+  "package": "certifi",
+  "severity": "HIGH",
+  "published": "2023-07-25",
+  "osv_ids": [
+   "GHSA-xqr8-7jwr-rhp7",
+   "PYSEC-2023-135"
+  ]
+ },
+ {
+  "cve": "CVE-2016-9243",
+  "ecosystem": "PyPI",
+  "package": "cryptography",
+  "severity": "HIGH",
+  "published": "2017-03-27",
+  "osv_ids": [
+   "GHSA-q3cj-2r34-2cwc",
+   "PYSEC-2017-8"
+  ]
+ },
+ {
+  "cve": "CVE-2017-18342",
+  "ecosystem": "PyPI",
+  "package": "pyyaml",
+  "severity": "CRITICAL",
+  "published": "2018-06-27",
+  "osv_ids": [
+   "GHSA-rprw-h62v-c2w7",
+   "PYSEC-2018-49"
+  ]
+ },
+ {
+  "cve": "CVE-2014-1402",
+  "ecosystem": "PyPI",
+  "package": "jinja2",
+  "severity": "HIGH",
+  "published": "2022-05-14",
+  "osv_ids": [
+   "GHSA-8r7q-cvjq-x353"
+  ]
+ },
+ {
+  "cve": "CVE-2019-14322",
+  "ecosystem": "PyPI",
+  "package": "werkzeug",
+  "severity": "HIGH",
+  "published": "2022-05-24",
+  "osv_ids": [
+   "GHSA-j544-7q9p-6xp8",
+   "PYSEC-2026-1065"
+  ]
+ },
+ {
+  "cve": "CVE-2018-1000656",
+  "ecosystem": "PyPI",
+  "package": "flask",
+  "severity": "HIGH",
+  "published": "2018-08-20",
+  "osv_ids": [
+   "GHSA-562c-5r94-xh97",
+   "PYSEC-2018-66"
+  ]
+ },
+ {
+  "cve": "CVE-2011-0698",
+  "ecosystem": "PyPI",
+  "package": "django",
+  "severity": "CRITICAL",
+  "published": "2018-07-23",
+  "osv_ids": [
+   "GHSA-7g9h-c88w-r7h2"
+  ]
+ },
+ {
+  "cve": "CVE-2014-3007",
+  "ecosystem": "PyPI",
+  "package": "pillow",
+  "severity": "CRITICAL",
+  "published": "2022-05-17",
+  "osv_ids": [
+   "GHSA-8m9x-pxwq-j236"
+  ]
+ },
+ {
+  "cve": "CVE-2019-6446",
+  "ecosystem": "PyPI",
+  "package": "numpy",
+  "severity": "CRITICAL",
+  "published": "2019-01-16",
+  "osv_ids": [
+   "GHSA-9fq2-x9r6-wfmf",
+   "PYSEC-2019-108"
+  ]
+ },
+ {
+  "cve": "CVE-2026-41066",
+  "ecosystem": "PyPI",
+  "package": "lxml",
+  "severity": "HIGH",
+  "published": "2026-04-21",
+  "osv_ids": [
+   "GHSA-vfmq-68hx-4jfw",
+   "PYSEC-2026-87"
+  ]
+ },
+ {
+  "cve": "CVE-2012-0805",
+  "ecosystem": "PyPI",
+  "package": "sqlalchemy",
+  "severity": "CRITICAL",
+  "published": "2022-05-14",
+  "osv_ids": [
+   "GHSA-hfg2-wf6j-x53p"
+  ]
+ },
+ {
+  "cve": "CVE-2024-23334",
+  "ecosystem": "PyPI",
+  "package": "aiohttp",
+  "severity": "HIGH",
+  "published": "2024-01-29",
+  "osv_ids": [
+   "GHSA-5h86-8mv2-jq9f",
+   "PYSEC-2024-24"
+  ]
+ },
+ {
+  "cve": "CVE-2018-7750",
+  "ecosystem": "PyPI",
+  "package": "paramiko",
+  "severity": "CRITICAL",
+  "published": "2018-03-13",
+  "osv_ids": [
+   "GHSA-232r-66cg-79px",
+   "PYSEC-2018-19"
+  ]
+ },
+ {
+  "cve": "CVE-2017-11424",
+  "ecosystem": "PyPI",
+  "package": "pyjwt",
+  "severity": "HIGH",
+  "published": "2017-08-24",
+  "osv_ids": [
+   "GHSA-r9jw-mwhq-wp62",
+   "PYSEC-2017-24"
+  ]
+ },
+ {
+  "cve": "CVE-2012-2374",
+  "ecosystem": "PyPI",
+  "package": "tornado",
+  "severity": "HIGH",
+  "published": "2022-05-17",
+  "osv_ids": [
+   "GHSA-f7fv-v9rh-prvc"
+  ]
+ },
+ {
+  "cve": "CVE-2019-12855",
+  "ecosystem": "PyPI",
+  "package": "twisted",
+  "severity": "CRITICAL",
+  "published": "2019-06-16",
+  "osv_ids": [
+   "GHSA-65rm-h285-5cc5",
+   "PYSEC-2019-129"
+  ]
+ },
+ {
+  "cve": "CVE-2018-1000164",
+  "ecosystem": "PyPI",
+  "package": "gunicorn",
+  "severity": "HIGH",
+  "published": "2018-04-18",
+  "osv_ids": [
+   "GHSA-32pc-xphx-q4f6",
+   "PYSEC-2018-55"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23727",
+  "ecosystem": "PyPI",
+  "package": "celery",
+  "severity": "HIGH",
+  "published": "2021-12-29",
+  "osv_ids": [
+   "GHSA-q4xr-rc97-m4xx",
+   "PYSEC-2021-858"
+  ]
+ },
+ {
+  "cve": "CVE-2018-7575",
+  "ecosystem": "PyPI",
+  "package": "tensorflow",
+  "severity": "CRITICAL",
+  "published": "2019-04-24",
+  "osv_ids": [
+   "GHSA-mw6v-crh8-8533",
+   "PYSEC-2019-205"
+  ]
+ },
+ {
+  "cve": "CVE-2017-14158",
+  "ecosystem": "PyPI",
+  "package": "scrapy",
+  "severity": "HIGH",
+  "published": "2017-09-05",
+  "osv_ids": [
+   "GHSA-h7wm-ph43-c39p",
+   "PYSEC-2017-83"
+  ]
+ },
+ {
+  "cve": "CVE-2021-21240",
+  "ecosystem": "PyPI",
+  "package": "httplib2",
+  "severity": "HIGH",
+  "published": "2021-02-08",
+  "osv_ids": [
+   "GHSA-93xj-8mrv-444m",
+   "PYSEC-2021-16"
+  ]
+ },
+ {
+  "cve": "CVE-2013-7459",
+  "ecosystem": "PyPI",
+  "package": "pycrypto",
+  "severity": "CRITICAL",
+  "published": "2017-02-15",
+  "osv_ids": [
+   "GHSA-cq27-v7xp-c356",
+   "PYSEC-2017-94"
+  ]
+ },
+ {
+  "cve": "CVE-2018-7753",
+  "ecosystem": "PyPI",
+  "package": "bleach",
+  "severity": "CRITICAL",
+  "published": "2018-03-07",
+  "osv_ids": [
+   "GHSA-m9mq-p2f9-cfqv",
+   "PYSEC-2018-51"
+  ]
+ },
+ {
+  "cve": "CVE-2022-34749",
+  "ecosystem": "PyPI",
+  "package": "mistune",
+  "severity": "HIGH",
+  "published": "2022-07-25",
+  "osv_ids": [
+   "GHSA-fw3v-x4f2-v673",
+   "PYSEC-2022-237"
+  ]
+ },
+ {
+  "cve": "CVE-2021-42771",
+  "ecosystem": "PyPI",
+  "package": "babel",
+  "severity": "HIGH",
+  "published": "2021-10-20",
+  "osv_ids": [
+   "GHSA-h4m5-qpfp-3mpv",
+   "PYSEC-2021-421"
+  ]
+ },
+ {
+  "cve": "CVE-2019-11324",
+  "ecosystem": "PyPI",
+  "package": "urllib3",
+  "severity": "HIGH",
+  "published": "2019-04-18",
+  "osv_ids": [
+   "GHSA-mh33-7rrq-662w",
+   "PYSEC-2019-133"
+  ]
+ },
+ {
+  "cve": "CVE-2022-40897",
+  "ecosystem": "PyPI",
+  "package": "setuptools",
+  "severity": "HIGH",
+  "published": "2022-12-23",
+  "osv_ids": [
+   "GHSA-r9hx-vwmv-q579",
+   "PYSEC-2022-43012"
+  ]
+ },
+ {
+  "cve": "CVE-2018-10903",
+  "ecosystem": "PyPI",
+  "package": "cryptography",
+  "severity": "HIGH",
+  "published": "2018-07-30",
+  "osv_ids": [
+   "GHSA-fcf9-3qw3-gxmj",
+   "PYSEC-2018-52"
+  ]
+ },
+ {
+  "cve": "CVE-2019-20477",
+  "ecosystem": "PyPI",
+  "package": "pyyaml",
+  "severity": "CRITICAL",
+  "published": "2020-02-19",
+  "osv_ids": [
+   "GHSA-3pqx-4fqf-j49f",
+   "PYSEC-2020-176"
+  ]
+ },
+ {
+  "cve": "CVE-2016-10745",
+  "ecosystem": "PyPI",
+  "package": "jinja2",
+  "severity": "HIGH",
+  "published": "2019-04-08",
+  "osv_ids": [
+   "GHSA-hj2j-77xm-mc5v",
+   "PYSEC-2019-220"
+  ]
+ },
+ {
+  "cve": "CVE-2019-14806",
+  "ecosystem": "PyPI",
+  "package": "werkzeug",
+  "severity": "HIGH",
+  "published": "2019-08-09",
+  "osv_ids": [
+   "GHSA-gq9m-qvpx-68hc",
+   "PYSEC-2019-140"
+  ]
+ },
+ {
+  "cve": "CVE-2019-1010083",
+  "ecosystem": "PyPI",
+  "package": "flask",
+  "severity": "HIGH",
+  "published": "2019-07-17",
+  "osv_ids": [
+   "GHSA-5wv5-4vpf-pj6m",
+   "PYSEC-2019-179"
+  ]
+ },
+ {
+  "cve": "CVE-2012-3442",
+  "ecosystem": "PyPI",
+  "package": "django",
+  "severity": "CRITICAL",
+  "published": "2022-05-17",
+  "osv_ids": [
+   "GHSA-78vx-ggch-wghm"
+  ]
+ },
+ {
+  "cve": "CVE-2016-4009",
+  "ecosystem": "PyPI",
+  "package": "pillow",
+  "severity": "CRITICAL",
+  "published": "2018-07-24",
+  "osv_ids": [
+   "GHSA-hvr8-466p-75rh"
+  ]
+ },
+ {
+  "cve": "CVE-2014-1858",
+  "ecosystem": "PyPI",
+  "package": "numpy",
+  "severity": "HIGH",
+  "published": "2018-01-08",
+  "osv_ids": [
+   "GHSA-cw6w-4rcx-xphc",
+   "PYSEC-2018-33"
+  ]
+ },
+ {
+  "cve": "CVE-2019-7164",
+  "ecosystem": "PyPI",
+  "package": "sqlalchemy",
+  "severity": "CRITICAL",
+  "published": "2019-02-20",
+  "osv_ids": [
+   "GHSA-887w-45rq-vxgf",
+   "PYSEC-2019-123"
+  ]
+ },
+ {
+  "cve": "CVE-2024-30251",
+  "ecosystem": "PyPI",
+  "package": "aiohttp",
+  "severity": "HIGH",
+  "published": "2024-05-03",
+  "osv_ids": [
+   "GHSA-5m98-qgg9-wh84",
+   "PYSEC-2026-1098"
+  ]
+ },
+ {
+  "cve": "CVE-2008-0299",
+  "ecosystem": "PyPI",
+  "package": "paramiko",
+  "severity": "HIGH",
+  "published": "2022-05-01",
+  "osv_ids": [
+   "GHSA-wqmm-q65g-2hqr"
+  ]
+ },
+ {
+  "cve": "CVE-2022-29217",
+  "ecosystem": "PyPI",
+  "package": "pyjwt",
+  "severity": "HIGH",
+  "published": "2022-05-24",
+  "osv_ids": [
+   "GHSA-ffqj-6fqr-9h24",
+   "PYSEC-2022-202"
+  ]
+ },
+ {
+  "cve": "CVE-2014-9720",
+  "ecosystem": "PyPI",
+  "package": "tornado",
+  "severity": "HIGH",
+  "published": "2020-01-24",
+  "osv_ids": [
+   "GHSA-8vpw-mgpf-mpvv",
+   "PYSEC-2020-213"
+  ]
+ },
+ {
+  "cve": "CVE-2020-10108",
+  "ecosystem": "PyPI",
+  "package": "twisted",
+  "severity": "CRITICAL",
+  "published": "2020-03-12",
+  "osv_ids": [
+   "GHSA-h96w-mmrf-2h6v",
+   "PYSEC-2020-259"
+  ]
+ },
+ {
+  "cve": "CVE-2024-1135",
+  "ecosystem": "PyPI",
+  "package": "gunicorn",
+  "severity": "HIGH",
+  "published": "2024-04-16",
+  "osv_ids": [
+   "GHSA-w3h3-4rj7-4ph4",
+   "PYSEC-2026-1434"
+  ]
+ },
+ {
+  "cve": "CVE-2020-15212",
+  "ecosystem": "PyPI",
+  "package": "tensorflow",
+  "severity": "CRITICAL",
+  "published": "2020-09-25",
+  "osv_ids": [
+   "GHSA-hx2x-85gr-wrpq",
+   "PYSEC-2020-135"
+  ]
+ },
+ {
+  "cve": "CVE-2024-1892",
+  "ecosystem": "PyPI",
+  "package": "scrapy",
+  "severity": "HIGH",
+  "published": "2024-02-15",
+  "osv_ids": [
+   "GHSA-cc65-xxvf-f7r9",
+   "PYSEC-2024-162"
+  ]
+ },
+ {
+  "cve": "CVE-2026-59939",
+  "ecosystem": "PyPI",
+  "package": "httplib2",
+  "severity": "HIGH",
+  "published": "2026-07-08",
+  "osv_ids": [
+   "GHSA-j5g9-f88f-gfj3",
+   "PYSEC-2026-3444"
+  ]
+ },
+ {
+  "cve": "CVE-2013-1445",
+  "ecosystem": "PyPI",
+  "package": "pycrypto",
+  "severity": "HIGH",
+  "published": "2022-05-17",
+  "osv_ids": [
+   "GHSA-x377-f64p-hf5j"
+  ]
+ },
+ {
+  "cve": "CVE-2020-6817",
+  "ecosystem": "PyPI",
+  "package": "bleach",
+  "severity": "HIGH",
+  "published": "2020-03-30",
+  "osv_ids": [
+   "GHSA-vqhp-cxgc-6wmm",
+   "PYSEC-2020-340"
+  ]
+ },
+ {
+  "cve": "CVE-2019-10744",
+  "ecosystem": "npm",
+  "package": "lodash",
+  "severity": "CRITICAL",
+  "published": "2019-07-10",
+  "osv_ids": [
+   "GHSA-jf85-cpcp-j695"
+  ]
+ },
+ {
+  "cve": "CVE-2021-44906",
+  "ecosystem": "npm",
+  "package": "minimist",
+  "severity": "CRITICAL",
+  "published": "2022-03-18",
+  "osv_ids": [
+   "GHSA-xvch-5gv4-984h"
+  ]
+ },
+ {
+  "cve": "CVE-2019-10742",
+  "ecosystem": "npm",
+  "package": "axios",
+  "severity": "HIGH",
+  "published": "2019-05-29",
+  "osv_ids": [
+   "GHSA-42xw-2xvc-qx8m"
+  ]
+ },
+ {
+  "cve": "CVE-2022-0235",
+  "ecosystem": "npm",
+  "package": "node-fetch",
+  "severity": "HIGH",
+  "published": "2022-01-21",
+  "osv_ids": [
+   "GHSA-r683-j2x4-v87g"
+  ]
+ },
+ {
+  "cve": "CVE-2015-9235",
+  "ecosystem": "npm",
+  "package": "jsonwebtoken",
+  "severity": "CRITICAL",
+  "published": "2018-10-09",
+  "osv_ids": [
+   "GHSA-c7hr-j4mj-j2w6"
+  ]
+ },
+ {
+  "cve": "CVE-2016-10542",
+  "ecosystem": "npm",
+  "package": "ws",
+  "severity": "HIGH",
+  "published": "2019-02-18",
+  "osv_ids": [
+   "GHSA-6663-c963-2gqg"
+  ]
+ },
+ {
+  "cve": "CVE-2017-18214",
+  "ecosystem": "npm",
+  "package": "moment",
+  "severity": "HIGH",
+  "published": "2018-03-05",
+  "osv_ids": [
+   "GHSA-446m-mv8f-q348"
+  ]
+ },
+ {
+  "cve": "CVE-2019-19919",
+  "ecosystem": "npm",
+  "package": "handlebars",
+  "severity": "CRITICAL",
+  "published": "2019-12-26",
+  "osv_ids": [
+   "GHSA-w457-6q6x-cgp9"
+  ]
+ },
+ {
+  "cve": "CVE-2015-8854",
+  "ecosystem": "npm",
+  "package": "marked",
+  "severity": "HIGH",
+  "published": "2017-10-24",
+  "osv_ids": [
+   "GHSA-hjcp-j389-59ff"
+  ]
+ },
+ {
+  "cve": "CVE-2016-10707",
+  "ecosystem": "npm",
+  "package": "jquery",
+  "severity": "HIGH",
+  "published": "2018-01-22",
+  "osv_ids": [
+   "GHSA-mhpp-875w-9cpv"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23358",
+  "ecosystem": "npm",
+  "package": "underscore",
+  "severity": "CRITICAL",
+  "published": "2021-05-06",
+  "osv_ids": [
+   "GHSA-cf4h-3jhx-xvhq"
+  ]
+ },
+ {
+  "cve": "CVE-2014-10064",
+  "ecosystem": "npm",
+  "package": "qs",
+  "severity": "HIGH",
+  "published": "2018-10-09",
+  "osv_ids": [
+   "GHSA-f9cm-p3w6-xvr3"
+  ]
+ },
+ {
+  "cve": "CVE-2015-8855",
+  "ecosystem": "npm",
+  "package": "semver",
+  "severity": "HIGH",
+  "published": "2017-10-24",
+  "osv_ids": [
+   "GHSA-x6fg-f45m-jf5q"
+  ]
+ },
+ {
+  "cve": "CVE-2026-59873",
+  "ecosystem": "npm",
+  "package": "tar",
+  "severity": "CRITICAL",
+  "published": "2026-07-20",
+  "osv_ids": [
+   "GHSA-23hp-3jrh-7fpw"
+  ]
+ },
+ {
+  "cve": "CVE-2022-46175",
+  "ecosystem": "npm",
+  "package": "json5",
+  "severity": "HIGH",
+  "published": "2022-12-29",
+  "osv_ids": [
+   "GHSA-9c47-m6qq-7p4h"
+  ]
+ },
+ {
+  "cve": "CVE-2020-28469",
+  "ecosystem": "npm",
+  "package": "glob-parent",
+  "severity": "HIGH",
+  "published": "2021-06-07",
+  "osv_ids": [
+   "GHSA-ww39-953v-wcq6"
+  ]
+ },
+ {
+  "cve": "CVE-2020-7733",
+  "ecosystem": "npm",
+  "package": "ua-parser-js",
+  "severity": "HIGH",
+  "published": "2021-05-07",
+  "osv_ids": [
+   "GHSA-662x-fhqg-9p8v"
+  ]
+ },
+ {
+  "cve": "CVE-2016-10541",
+  "ecosystem": "npm",
+  "package": "shell-quote",
+  "severity": "CRITICAL",
+  "published": "2019-02-18",
+  "osv_ids": [
+   "GHSA-qg8p-v9q4-gh34"
+  ]
+ },
+ {
+  "cve": "CVE-2017-16031",
+  "ecosystem": "npm",
+  "package": "socket.io",
+  "severity": "HIGH",
+  "published": "2018-11-07",
+  "osv_ids": [
+   "GHSA-qv2v-m59f-v5fw"
+  ]
+ },
+ {
+  "cve": "CVE-2019-17426",
+  "ecosystem": "npm",
+  "package": "mongoose",
+  "severity": "CRITICAL",
+  "published": "2019-10-22",
+  "osv_ids": [
+   "GHSA-8687-vv9j-hgph"
+  ]
+ },
+ {
+  "cve": "CVE-2017-1000228",
+  "ecosystem": "npm",
+  "package": "ejs",
+  "severity": "CRITICAL",
+  "published": "2017-11-30",
+  "osv_ids": [
+   "GHSA-3w5v-p54c-f74x"
+  ]
+ },
+ {
+  "cve": "CVE-2020-7660",
+  "ecosystem": "npm",
+  "package": "serialize-javascript",
+  "severity": "HIGH",
+  "published": "2020-08-11",
+  "osv_ids": [
+   "GHSA-hxcc-f52p-wc94"
+  ]
+ },
+ {
+  "cve": "CVE-2020-8116",
+  "ecosystem": "npm",
+  "package": "dot-prop",
+  "severity": "HIGH",
+  "published": "2020-07-29",
+  "osv_ids": [
+   "GHSA-ff7x-qrg7-qggm"
+  ]
+ },
+ {
+  "cve": "CVE-2019-10747",
+  "ecosystem": "npm",
+  "package": "set-value",
+  "severity": "CRITICAL",
+  "published": "2019-08-27",
+  "osv_ids": [
+   "GHSA-4g88-fppr-53pp"
+  ]
+ },
+ {
+  "cve": "CVE-2016-10540",
+  "ecosystem": "npm",
+  "package": "minimatch",
+  "severity": "HIGH",
+  "published": "2018-10-09",
+  "osv_ids": [
+   "GHSA-hxm2-r34f-qmc5"
+  ]
+ },
+ {
+  "cve": "CVE-2018-16487",
+  "ecosystem": "npm",
+  "package": "lodash",
+  "severity": "HIGH",
+  "published": "2019-02-07",
+  "osv_ids": [
+   "GHSA-4xc9-xhrj-v574"
+  ]
+ },
+ {
+  "cve": "CVE-2021-3749",
+  "ecosystem": "npm",
+  "package": "axios",
+  "severity": "HIGH",
+  "published": "2021-09-01",
+  "osv_ids": [
+   "GHSA-cph5-m8f7-6c5x"
+  ]
+ },
+ {
+  "cve": "CVE-2022-23539",
+  "ecosystem": "npm",
+  "package": "jsonwebtoken",
+  "severity": "HIGH",
+  "published": "2022-12-22",
+  "osv_ids": [
+   "GHSA-8cf7-32gw-wr33"
+  ]
+ },
+ {
+  "cve": "CVE-2024-37890",
+  "ecosystem": "npm",
+  "package": "ws",
+  "severity": "HIGH",
+  "published": "2024-06-17",
+  "osv_ids": [
+   "GHSA-3h5v-q93c-6h6q"
+  ]
+ },
+ {
+  "cve": "CVE-2022-24785",
+  "ecosystem": "npm",
+  "package": "moment",
+  "severity": "HIGH",
+  "published": "2022-04-04",
+  "osv_ids": [
+   "GHSA-8hfj-j24r-96c4"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23369",
+  "ecosystem": "npm",
+  "package": "handlebars",
+  "severity": "CRITICAL",
+  "published": "2021-05-06",
+  "osv_ids": [
+   "GHSA-f2jv-r9rf-7988"
+  ]
+ },
+ {
+  "cve": "CVE-2017-16114",
+  "ecosystem": "npm",
+  "package": "marked",
+  "severity": "HIGH",
+  "published": "2018-07-24",
+  "osv_ids": [
+   "GHSA-x5pg-88wf-qq4p"
+  ]
+ },
+ {
+  "cve": "CVE-2026-27601",
+  "ecosystem": "npm",
+  "package": "underscore",
+  "severity": "HIGH",
+  "published": "2026-03-03",
+  "osv_ids": [
+   "GHSA-qpx9-hpmf-5gmw"
+  ]
+ },
+ {
+  "cve": "CVE-2014-7191",
+  "ecosystem": "npm",
+  "package": "qs",
+  "severity": "HIGH",
+  "published": "2017-10-24",
+  "osv_ids": [
+   "GHSA-jjv7-qpx3-h62q"
+  ]
+ },
+ {
+  "cve": "CVE-2022-25883",
+  "ecosystem": "npm",
+  "package": "semver",
+  "severity": "HIGH",
+  "published": "2023-06-21",
+  "osv_ids": [
+   "GHSA-c2qf-rxjj-qqgw"
+  ]
+ },
+ {
+  "cve": "CVE-2015-8860",
+  "ecosystem": "npm",
+  "package": "tar",
+  "severity": "HIGH",
+  "published": "2017-10-24",
+  "osv_ids": [
+   "GHSA-gfjr-3jmm-4g9v"
+  ]
+ },
+ {
+  "cve": "CVE-2021-35065",
+  "ecosystem": "npm",
+  "package": "glob-parent",
+  "severity": "HIGH",
+  "published": "2022-07-18",
+  "osv_ids": [
+   "GHSA-cj88-88mr-972w"
+  ]
+ },
+ {
+  "cve": "CVE-2020-7793",
+  "ecosystem": "npm",
+  "package": "ua-parser-js",
+  "severity": "HIGH",
+  "published": "2022-02-09",
+  "osv_ids": [
+   "GHSA-394c-5j6w-4xmx"
+  ]
+ },
+ {
+  "cve": "CVE-2021-42740",
+  "ecosystem": "npm",
+  "package": "shell-quote",
+  "severity": "CRITICAL",
+  "published": "2022-05-24",
+  "osv_ids": [
+   "GHSA-g4rg-993r-mgx7"
+  ]
+ },
+ {
+  "cve": "CVE-2022-24304",
+  "ecosystem": "npm",
+  "package": "mongoose",
+  "severity": "CRITICAL",
+  "published": "2022-08-27",
+  "osv_ids": [
+   "GHSA-h8hf-x3f4-xwgp"
+  ]
+ },
+ {
+  "cve": "CVE-2022-29078",
+  "ecosystem": "npm",
+  "package": "ejs",
+  "severity": "CRITICAL",
+  "published": "2022-04-26",
+  "osv_ids": [
+   "GHSA-phwq-j96m-2c2q"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23440",
+  "ecosystem": "npm",
+  "package": "set-value",
+  "severity": "HIGH",
+  "published": "2021-09-13",
+  "osv_ids": [
+   "GHSA-4jqc-8m5r-9rpr"
+  ]
+ },
+ {
+  "cve": "CVE-2022-3517",
+  "ecosystem": "npm",
+  "package": "minimatch",
+  "severity": "HIGH",
+  "published": "2022-10-18",
+  "osv_ids": [
+   "GHSA-f8q6-p94x-37v3"
+  ]
+ },
+ {
+  "cve": "CVE-2020-8203",
+  "ecosystem": "npm",
+  "package": "lodash",
+  "severity": "HIGH",
+  "published": "2020-07-15",
+  "osv_ids": [
+   "GHSA-p6mc-m468-83gw"
+  ]
+ },
+ {
+  "cve": "CVE-2024-39338",
+  "ecosystem": "npm",
+  "package": "axios",
+  "severity": "HIGH",
+  "published": "2024-08-12",
+  "osv_ids": [
+   "GHSA-8hc4-vh64-cxmj"
+  ]
+ },
+ {
+  "cve": "CVE-2026-48779",
+  "ecosystem": "npm",
+  "package": "ws",
+  "severity": "HIGH",
+  "published": "2026-06-15",
+  "osv_ids": [
+   "GHSA-96hv-2xvq-fx4p"
+  ]
+ },
+ {
+  "cve": "CVE-2022-31129",
+  "ecosystem": "npm",
+  "package": "moment",
+  "severity": "HIGH",
+  "published": "2022-07-06",
+  "osv_ids": [
+   "GHSA-wc69-rhjr-hc9g"
+  ]
+ },
+ {
+  "cve": "CVE-2021-23383",
+  "ecosystem": "npm",
+  "package": "handlebars",
+  "severity": "CRITICAL",
+  "published": "2022-02-10",
+  "osv_ids": [
+   "GHSA-765h-qjxv-5f44"
+  ]
+ },
+ {
+  "cve": "CVE-2022-21680",
+  "ecosystem": "npm",
+  "package": "marked",
+  "severity": "HIGH",
+  "published": "2022-01-14",
+  "osv_ids": [
+   "GHSA-rrrm-qjm4-v8hf"
+  ]
+ },
+ {
+  "cve": "CVE-2017-1000048",
+  "ecosystem": "npm",
+  "package": "qs",
+  "severity": "HIGH",
+  "published": "2020-04-30",
+  "osv_ids": [
+   "GHSA-gqgv-6jq5-jjj9"
+  ]
+ }
+]

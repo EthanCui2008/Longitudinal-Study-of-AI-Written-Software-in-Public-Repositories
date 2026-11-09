@@ -1,20 +1,15 @@
-# GitHub API
-PyGithub>=2.1.1
+# HTTP (GitHub GraphQL, OSV)
 requests>=2.31.0
 
-# Data processing
+# Data processing / analysis
 pandas>=2.0.0
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
 
-# Jupyter
-jupyter>=1.0.0
-ipykernel>=6.25.0
-tqdm>=4.65.0
-
-# Security scanning
-semgrep>=1.50.0
-
-# Dependency vulnerability checking
-pip-audit>=2.6.0
-
-# Environment and utilities
+# Pipeline utilities
+psutil>=5.9
 python-dotenv>=1.0.0
+
+# Security scanning (pinned: findings must be comparable across the whole run)
+semgrep==1.183.0

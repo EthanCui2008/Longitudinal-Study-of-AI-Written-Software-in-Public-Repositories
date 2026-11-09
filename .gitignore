@@ -1,8 +1,12 @@
-
 keys.env
-data/
+tailscale.env
+.env
 repos/
 results/
+results_test/
+results_test.prev/
 
 .claude
 .venv
+__pycache__/
+DOCKER.md

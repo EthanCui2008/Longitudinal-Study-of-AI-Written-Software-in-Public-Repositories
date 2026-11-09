@@ -1,0 +1,59 @@
+# Full run, test run and an optional Tailscale sidecar. Day to day, use ./lsaiw.sh, which wraps these.
+#
+#   docker compose up -d --build full                       full run (results/), dashboard on :8765
+#   docker compose up --build test                          test run (results_test/), dashboard on :8766
+#   docker compose --profile tailscale up -d tailscale      dashboards on your tailnet (see tailscale.env.example)
+#
+# Overridable from the shell or a .env file: LSAIW_PORT_FULL, LSAIW_PORT_TEST, LSAIW_BIND, LSAIW_CPUS,
+# LSAIW_MEM, LSAIW_UID/LSAIW_GID (lsaiw.sh sets these to your WSL user).
+name: lsaiw
+
+x-lsaiw: &lsaiw
+  build: .
+  image: lsaiw
+  env_file: keys.env
+  user: "${LSAIW_UID:-1000}:${LSAIW_GID:-1000}"
+  cpus: ${LSAIW_CPUS:-8}
+  mem_limit: ${LSAIW_MEM:-28g}
+  stop_grace_period: 5m           # graceful stop finishes in-flight semgrep batches
+
+services:
+  full:
+    <<: *lsaiw
+    command: ["run"]
+    shm_size: 8g                  # clones live in /dev/shm (Docker's default is 64 MB)
+    volumes: ["./results:/app/results"]
+    ports: ["${LSAIW_BIND:-0.0.0.0}:${LSAIW_PORT_FULL:-8765}:8765"]
+    environment:
+      LSAIW_PUBLIC_URL: "http://localhost:${LSAIW_PORT_FULL:-8765}"
+    restart: on-failure:5         # resumes from results/pipeline.db after a crash
+
+  test:
+    <<: *lsaiw
+    profiles: [test]
+    command: ["run", "--test"]
+    shm_size: 2g
+    volumes: ["./results_test:/app/results_test"]
+    ports: ["${LSAIW_BIND:-0.0.0.0}:${LSAIW_PORT_TEST:-8766}:8765"]
+    environment:
+      LSAIW_PUBLIC_URL: "http://localhost:${LSAIW_PORT_TEST:-8766}"
+
+  # Joins your tailnet as its own device and proxies to the dashboards over the compose network,
+  # so it works regardless of Windows/WSL port forwarding: http://<TS_HOSTNAME>.<tailnet>.ts.net
+  # serves the full run, :8080 the test run.
+  tailscale:
+    image: tailscale/tailscale:stable
+    profiles: [tailscale]
+    env_file: tailscale.env
+    environment:
+      TS_HOSTNAME: ${TS_HOSTNAME:-lsaiw}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_USERSPACE: "true"        # no /dev/net/tun or NET_ADMIN needed under Docker Desktop
+      TS_SERVE_CONFIG: /config/serve.json
+    volumes:
+      - tailscale-state:/var/lib/tailscale
+      - ./docker/tailscale-serve.json:/config/serve.json:ro
+    restart: unless-stopped
+
+volumes:
+  tailscale-state:
